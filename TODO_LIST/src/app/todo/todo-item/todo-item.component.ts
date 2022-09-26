@@ -41,7 +41,7 @@ export class TodoItemComponent implements OnInit, OnChanges{
   };
   public onTitleChange(value: string, ele:string) {
     this.todo.change='title';
-    if(ele="desc"){
+    if(ele=="desc"){
       this.todo.description = value;
     }else{
       this.todo.name = value;

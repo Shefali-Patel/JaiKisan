@@ -26,7 +26,7 @@
                         <input type="checkbox" disabled/>
                         <input type="text" class="addedItem"  placeholder="Add a task" #input>
                     </div>
-                    <button (click)="addTodoItem(input.value);" class="btn btn-info addbtn">ADD</button>
+                    <button (click)="addTodoItem(input.value);" [ngClass]="!input.value?'btn-secondary':'btn-info'" [disabled]="!input.value"  class="btn  addbtn">ADD</button>
                 </div>
             <ng-container *ngIf = "todoItems && completed && sections == 'Completed'">
                     <app-todo-item *ngFor="let task of completed;"

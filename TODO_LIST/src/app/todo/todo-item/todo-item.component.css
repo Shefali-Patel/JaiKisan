@@ -34,6 +34,8 @@ input.item__textarea {
     border: 0px;
     color: lightslategray;
     border-bottom: 1px solid lightgrey;
+    width:300px;
+    max-width:300px;
 }
 img{
     width: 12px;
