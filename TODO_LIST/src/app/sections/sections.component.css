@@ -10,7 +10,7 @@ img{
     align-items: center;
     justify-content: flex-start;
 }
-.menu:hover {
+.menu.active {
     background-color: lightgray;
 }
 .section-head{

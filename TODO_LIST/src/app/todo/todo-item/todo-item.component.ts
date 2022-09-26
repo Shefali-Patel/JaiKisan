@@ -20,32 +20,45 @@ export class TodoItemComponent implements OnInit, OnChanges{
   public completed:any;
   public isChecked:boolean = false;
   public isEditing:boolean = false;
+  public istextarea:any = false;
+  public strikeit:any = false;
   constructor() { }
   ngOnChanges(changes: SimpleChanges): void {
-    if(this.todo){
-      console.log('in onchage', this.todo);
-      this.ischange.emit();
-    }
+  
   }
   ngOnInit(): void {
     this.todo = {...this.todo};
   }
   public checkTick(e:any, item:any){
     this.todo.isDone = e.target.checked;
+    this.strikeit = true;
+    this.todo.change='check';
     this.edit.emit(this.todo);
     console.log(e.target.checked, item.name);
   };
-
   public startEdit(){
     this.isEditing = true;
   };
-  public onTitleChange(value: string) {
-    this.todo.name = value;
+  public onTitleChange(value: string, ele:string) {
+    this.todo.change='title';
+    if(ele="desc"){
+      this.todo.description = value;
+    }else{
+      this.todo.name = value;
+    }
+    this.edit.emit(this.todo);
   };
   public onDelete(){
       this.remove.emit(this.todo);
   };
   public saveChanges(){
     this.isEditing=false;
+    
   };
+  public updatechange(){
+    this.ischange.emit();
+  }
+  public editinTextArea(){
+    this.istextarea=!this.istextarea;
+  }
 }

@@ -52,3 +52,11 @@ input[type="checkbox"] {
 .addbtn{
     color:white;
 }
+.mat-snack-bar-container {
+    position: absolute;
+    top: 0px;
+    left: 41%;
+    width: 18%;
+    background-color: cadetblue;
+    color: white;
+}

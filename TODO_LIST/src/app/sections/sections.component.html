@@ -2,10 +2,10 @@
     <div class="section-head">
         <img src="../../assets/todolist.svg" alt="section" class="todolist" />Sections 
     </div>
-    <div class="menu" (click)="selectSections('Pending');"> 
+    <div class="menu" [ngClass]="isSection==false?'active':''" (click)="selectSections('Pending');"> 
         <img src="../../assets/pendings.svg" alt="" class="pending" />Pending 
     </div>
-    <div class="menu" (click)="selectSections('Completed');"> 
+    <div class="menu" [ngClass]="isSection==true?'active':''" (click)="selectSections('Completed');"> 
         <img src="../../assets/complete.svg" alt="" class="completed" />Completed 
     </div>
 </div>

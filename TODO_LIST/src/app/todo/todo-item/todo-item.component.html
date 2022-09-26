@@ -1,10 +1,15 @@
-<div class="tasks" >
+<div class="tasks" (change)="updatechange();" >
   <div class="selection">
     <input type="checkbox" name="items"  (click)="checkTick($event, todo);" [checked]="todo.isDone" />
-    <span *ngIf="!isEditing" class="item__title" (dblclick)="startEdit()" #title>
+    <span *ngIf="!isEditing" class="item__title" (dblclick)="startEdit()"   #title>
         {{ todo.name }}
     </span>
+    <span *ngIf="!istextarea && todo.description" class="desc"> <span> Desc: </span> &nbsp; {{todo.description}}</span>
+    <input *ngIf="isEditing" type="text" class="item__textarea" [value]="todo.name" (input)="onTitleChange(input.value,'name')" (focusout)="saveChanges();" #input autofocus="autofocus">
+    <textarea *ngIf="istextarea"  placeholder="Add Description...." (input)="onTitleChange(textarea.value,'desc')" #textarea></textarea>
   </div>
-  <input *ngIf="isEditing" type="text" class="item__textarea" [value]="todo.name" (input)="onTitleChange(input.value)" (focusout)="saveChanges();" #input autofocus>
-  <img src="../../../assets/trash.png" alt="remove" class="item__remove delete" (click)="onDelete()" />
+  <div>
+    <img src="../../../assets/edit.svg" (click)="editinTextArea()" />
+    <img src="../../../assets/trash.png" alt="remove" class="item__remove delete" (click)="onDelete()" />
+  </div>
 </div>

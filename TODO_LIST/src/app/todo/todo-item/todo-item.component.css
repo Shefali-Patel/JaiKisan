@@ -13,6 +13,10 @@ img.item__remove.delete {
 }
 span.item__title {
     font-size: 18px;
+    max-width: 300px;
+    word-break: break-all;
+    width: 300px;
+    color: darkblue;
 }
 input[type="checkbox"] {
     width: 16px;
@@ -24,4 +28,30 @@ input[type="checkbox"] {
     align-items: center;
     justify-content: flex-start;
     padding-left: 15px;
+}
+input.item__textarea {
+    outline: 0px;
+    border: 0px;
+    color: lightslategray;
+    border-bottom: 1px solid lightgrey;
+}
+img{
+    width: 12px;
+    height: 12px;
+    margin: 0px 10px;
+}
+textarea {
+    border: 0px;
+    outline: 0px;
+    resize: horizontal;
+    height: 27px;
+    border-bottom: 1px solid lightgrey;
+    margin-left: 20px;
+    padding: 0px 10px;
+}
+span.desc {
+    font-style: italic;
+}
+span.desc span{
+    font-style: normal;
 }

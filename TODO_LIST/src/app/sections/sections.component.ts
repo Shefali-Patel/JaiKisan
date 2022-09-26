@@ -9,7 +9,7 @@ import { StorageServiceService } from '../storage-service.service';
 export class SectionsComponent implements OnInit {
   @Output() sections = new EventEmitter<string>();
 public todoList:TodoList[]=[];
- 
+public isSection:any = false;
   constructor(private stService:StorageServiceService) { }
 
   ngOnInit(): void {
@@ -18,6 +18,11 @@ public todoList:TodoList[]=[];
     console.log(this.todoList);
   }
   public selectSections(val:string){
+    if(val == 'Pending'){
+      this.isSection = false;
+    }else{
+      this.isSection = true;
+    }
     this.sections.emit(val);
   }
 
