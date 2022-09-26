@@ -1,0 +1,54 @@
+.sections {
+    display: inline-block;
+    box-shadow: 1px 0px 6px lightgrey;
+    height: 100vw;
+    padding:0px;
+}
+img.add {
+    width: 15px;
+    height: 15px;
+    margin-right: 15px;
+}
+.navbar-brand {
+    margin-left: 30px;
+    font-weight: bold;
+}
+.clear{
+    margin-right: 30px;
+}
+.normalText {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    color:blue;
+}
+.addTask {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 30px 12px 25px;
+    margin: 15px 20px 15px 5px;
+    box-shadow: 1px 0px 6px lightgrey;
+    border-radius: 5px;
+}
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-right: 15px;
+}
+.addedItem {
+    border: 0px;
+}
+.addedItem:focus-visible{
+    border:0px;
+    outline: 0px;
+}
+.textAdded{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.addbtn{
+    color:white;
+}

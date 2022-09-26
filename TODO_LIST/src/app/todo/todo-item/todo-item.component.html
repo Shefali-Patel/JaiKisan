@@ -1,0 +1,10 @@
+<div class="tasks" >
+  <div class="selection">
+    <input type="checkbox" name="items"  (click)="checkTick($event, todo);" [checked]="todo.isDone" />
+    <span *ngIf="!isEditing" class="item__title" (dblclick)="startEdit()" #title>
+        {{ todo.name }}
+    </span>
+  </div>
+  <input *ngIf="isEditing" type="text" class="item__textarea" [value]="todo.name" (input)="onTitleChange(input.value)" (focusout)="saveChanges();" #input autofocus>
+  <img src="../../../assets/trash.png" alt="remove" class="item__remove delete" (click)="onDelete()" />
+</div>
