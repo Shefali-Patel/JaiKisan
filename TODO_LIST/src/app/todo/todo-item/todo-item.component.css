@@ -2,6 +2,16 @@ img.item__remove.delete {
     width: 20px;
     height: 20px;
 }
+img{
+    width: 12px;
+    height: 12px;
+    margin: 0px 10px;
+}
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-right: 15px;
+}
 .tasks{
     padding: 12px 30px 12px 10px;
     display: flex;
@@ -11,23 +21,18 @@ img.item__remove.delete {
     box-shadow: 1px 0px 6px lightgrey;
     border-radius: 5px;
 }
+.selection{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 15px;
+}
 span.item__title {
     font-size: 18px;
     max-width: 300px;
     word-break: break-all;
     width: 300px;
     color: darkblue;
-}
-input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    margin-right: 15px;
-}
-.selection{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 15px;
 }
 input.item__textarea {
     outline: 0px;
@@ -36,11 +41,6 @@ input.item__textarea {
     border-bottom: 1px solid lightgrey;
     width:300px;
     max-width:300px;
-}
-img{
-    width: 12px;
-    height: 12px;
-    margin: 0px 10px;
 }
 textarea {
     border: 0px;
@@ -51,9 +51,5 @@ textarea {
     margin-left: 20px;
     padding: 0px 10px;
 }
-span.desc {
-    font-style: italic;
-}
-span.desc span{
-    font-style: normal;
-}
+span.desc {font-style: italic;}
+span.desc span{font-style: normal;}

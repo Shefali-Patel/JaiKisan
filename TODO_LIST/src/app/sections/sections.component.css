@@ -3,23 +3,17 @@ img{
     height: 15px;
     margin: 0 15px;
 }
-.menu {
+.menu, .section-head {
     padding: 10px 0px;
     font-size: 15px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
-.menu.active {
-    background-color: lightgray;
-}
+.menu.active {background-color: lightgray;}
 .section-head{
-    padding: 10px 0px;
     font-size: 20px;
     font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
 }
 .sectionwrapper {
     height: 100%;

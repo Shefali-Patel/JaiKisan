@@ -8,23 +8,21 @@ import { StorageServiceService } from '../storage-service.service';
 })
 export class SectionsComponent implements OnInit {
   @Output() sections = new EventEmitter<string>();
-public todoList:TodoList[]=[];
-public isSection:any = false;
+  public todoList:TodoList[]=[];
+  public isSection:boolean = false;
   constructor(private stService:StorageServiceService) { }
 
   ngOnInit(): void {
-    
     this.todoList = this.stService.getData('tasks');
     console.log(this.todoList);
   }
+
   public selectSections(val:string){
-    if(val == 'Pending'){
-      this.isSection = false;
-    }else{
+    if(val == 'Completed'){
       this.isSection = true;
+    }else{
+      this.isSection = false;
     }
     this.sections.emit(val);
   }
-
-
 }

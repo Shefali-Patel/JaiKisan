@@ -3,31 +3,32 @@
     <div (click)="clearStorageData();" class="btn btn-danger clear">Clear Storage Data</div>
 </nav>
 
-  <!-- <div class="alert alert-warning alert-dismissible fade show" *ngIf="isTaskDone" role="alert">
-    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div> -->
 <div class="col-md-12">
     <div class="row">
+
+        <!-- Calling right Sections Panel -->
         <div class="col-md-3 sections">
            <app-sections  (sections)="selectSections($event);"></app-sections>
         </div>
+
+        <!-- Display Tasks Left Panel -->
         <div class="col-md-9 itemsWrapper">
-            
-                <div class="addPanel" *ngIf="!addTask" >
-                    <div class="normalText" (click)="addTodoItem('');"> 
-                        <img src="../../../assets/plus.svg" alt="add" class="add" />
-                         Add a task</div>
-                </div>
-                <div class="addTask" *ngIf="addTask" #addtask>
-                    <div class="textAdded">
-                        <input type="checkbox" disabled/>
-                        <input type="text" class="addedItem"  placeholder="Add a task" #input>
-                    </div>
-                    <button (click)="addTodoItem(input.value);" [ngClass]="!input.value?'btn-secondary':'btn-info'" [disabled]="!input.value"  class="btn  addbtn">ADD</button>
-                </div>
+
+            <!-- To add a Task on click of 'Add a task' and on click of Add button -->
+            <div *ngIf="sections == 'Pending'">
+              <div class="addPanel" *ngIf="!addTask" >
+                <div class="normalText" (click)="addTodoItem('');"><img src="../../../assets/plus.svg" alt="add" class="add" />Add a task</div>
+              </div>
+              <div class="addTask" *ngIf="addTask" #addtask>
+                  <div class="textAdded">
+                      <input type="checkbox" disabled/>
+                      <input type="text" class="addedItem"  placeholder="Add a task" #input>
+                  </div>
+                  <button (click)="addTodoItem(input.value);" [ngClass]="!input.value?'btn-secondary':'btn-info'" [disabled]="!input.value"  class="btn  addbtn">ADD</button>
+              </div>
+            </div>
+
+            <!-- To display the tasks for Completed/Done Section -->
             <ng-container *ngIf = "todoItems && completed && sections == 'Completed'">
                     <app-todo-item *ngFor="let task of completed;"
                     [todo]="task"
@@ -37,6 +38,8 @@
                     (ischange)="checkSections(sections);">
                   </app-todo-item>
             </ng-container>
+
+            <!-- To display the tasks for Pending/Undone Section -->
             <ng-container *ngIf = "todoItems && pending && sections == 'Pending'">
                 <app-todo-item *ngFor="let task of pending;"
                 [todo]="task"
@@ -45,7 +48,7 @@
                 (remove)="handleRemove($event)"
                 (ischange)="checkSections(sections);">
               </app-todo-item>
-        </ng-container>
+            </ng-container>
             
         </div>
     </div>
